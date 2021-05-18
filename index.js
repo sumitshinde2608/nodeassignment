@@ -1,3 +1,6 @@
+/* run ' npm i' to install the dependencies and then run 'node index.js'  to run the file*/
+// The Nodemailer npm packaage has been used  in the project 
+
 const fs = require('fs');
 const readline = require('readline');
 const nodemailer = require('nodemailer');
@@ -18,7 +21,7 @@ oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
 async function sendMail() {
   try {
-    const accessToken = await oAuth2Client.getAccessToken();
+    const accessToken = await oAuth2Client.getAccessToken();  // a new refresh token is eing created everytime a user logs in  
 
     const transport = nodemailer.createTransport({
       service: 'gmail',
